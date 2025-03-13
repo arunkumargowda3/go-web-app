@@ -1,4 +1,4 @@
-FROM golang:1.22 as arun
+FROM golang:1.22.5 as arun
 WORKDIR /app
 #go.mod is like requrement.txt
 COPY go.mod .
@@ -14,7 +14,7 @@ RUN go build -o main .
 
 #distrroless image
 
-FROM gcr.io/distrroless/arun
+FROM gcr.io/distrroless/base
 
 COPY --from=arun /app/main .
 
