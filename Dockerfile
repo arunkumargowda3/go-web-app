@@ -14,7 +14,7 @@ RUN go build -o main .
 
 #distrroless image
 
-FROM gcr.io/distrroless/base
+FROM gcr.io/distrroless/arun
 
 COPY --from=arun /app/main .
 
